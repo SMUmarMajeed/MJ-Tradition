@@ -66,6 +66,17 @@ define( 'NONCE_SALT',       'd>$NRV_f/ra=CW!}MNA}ue|^//k<o^ 3=`d@dmS+v/5JKOz!|0^
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix = 'wp_';
+define(‘WP_DEBUG’, false);
+define(‘WP_HTTP_BLOCK_EXTERNAL’, false);
+define(‘FS_METHOD’, ‘direct’);
+define(‘DISABLE_WP_CRON’, true);
+define(‘WP_MEMORY_LIMIT’, ‘256M’);
+define( ‘WP_CACHE’, true );
+define(‘WP_ALLOW_REPAIR’, true);
+require_once(ABSPATH . ‘wp-settings.php’);
+add_filter( ‘auto_update_plugin’, ‘__return_false’ );
+add_filter( ‘auto_update_theme’, ‘__return_false’ );
+define( ‘WP_AUTO_UPDATE_CORE’, ‘major’ );
 
 /**
  * For developers: WordPress debugging mode.
